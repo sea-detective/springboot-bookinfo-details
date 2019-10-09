@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_package = "com.springboot.bookinfo.details.lib.detail";
+option java_outer_classname = "BookDetailProto";
+
+service BookDetailService {
+    rpc GetBookDetail(GetBookDetailRequest) returns (BookDetail) {}
+}
+
+message GetBookDetailRequest {
+    int64 productId = 1;
+}
+
+message BookDetail {
+
+    int64 id = 1;
+    string author = 2;
+    int32 year = 3;
+    string type = 4;
+    int32 pages = 5;
+    string publisher = 6;
+    string language = 7;
+    string isbn10 = 8;
+    string isbn13 = 9;
+
+}

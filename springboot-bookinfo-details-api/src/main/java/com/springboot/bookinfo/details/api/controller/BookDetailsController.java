@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookDetailsController {
 
     @RequestMapping("/details/{productId}")
-    public BookDetail getBookinfoDetail(@PathVariable(name = "productId") Long productId) {
+    public BookDetail getBookDetail(@PathVariable(name = "productId") Long productId) {
 
         BookDetail bookDetail = new BookDetail();
         bookDetail.setId(productId);
