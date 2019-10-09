@@ -39,3 +39,5 @@ springboot-bookinfo-details.iml
 /springboot-bookinfo-details-api/target/classes/
 /springboot-bookinfo-details-api/target/springboot-bookinfo-details-api-1.0.0-SNAPSHOT.jar.original
 /springboot-bookinfo-details-api/springboot-bookinfo-details-api.iml
+/springboot-bookinfo-details-lib/springboot-bookinfo-details-lib.iml
+/springboot-bookinfo-details-lib/target/
