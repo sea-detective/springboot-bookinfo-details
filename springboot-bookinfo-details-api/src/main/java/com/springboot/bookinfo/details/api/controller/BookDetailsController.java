@@ -24,8 +24,8 @@ public class BookDetailsController {
         bookDetail.setType("paperback");
         bookDetail.setYear(1595);
         bookDetail.setPublisher("PublisherA");
-        bookDetail.setIsbn10("1234567890");
-        bookDetail.setIsbn13("123-1234567890");
+        bookDetail.setIsbn10("1234567892");
+        bookDetail.setIsbn13("123-1234567892");
 
         return bookDetail;
 
