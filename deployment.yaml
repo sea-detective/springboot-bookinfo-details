@@ -1,0 +1,120 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: details
+  namespace: istio-test
+  labels:
+    app: details
+spec:
+  ports:
+    - port: 7001
+      name: http
+      targetPort: 7001
+    - port: 9090
+      name: grpc
+      targetPort: 9090
+  selector:
+    app: details
+---
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: details-v1
+  namespace: istio-test
+  labels:
+    app: details
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: details
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: details
+        version: v1
+    spec:
+      containers:
+        - name: details
+          image: registry.cn-shanghai.aliyuncs.com/cn-middleware-istio/springboot-bookinfo-details:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 7001
+              protocol: TCP
+            - containerPort: 9090
+              protocol: TCP
+          resources:
+            requests:
+              cpu: '1'
+              memory: 256Mi
+---
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: details-v2
+  namespace: istio-test
+  labels:
+    app: details
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: details
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: details
+        version: v2
+    spec:
+      containers:
+        - name: details
+          image: registry.cn-shanghai.aliyuncs.com/cn-middleware-istio/springboot-bookinfo-details:2.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 7001
+              protocol: TCP
+            - containerPort: 9090
+              protocol: TCP
+          resources:
+            requests:
+              cpu: '1'
+              memory: 256Mi
+---
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: details-v3
+  namespace: istio-test
+  labels:
+    app: details
+    version: v3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: details
+      version: v3
+  template:
+    metadata:
+      labels:
+        app: details
+        version: v3
+    spec:
+      containers:
+        - name: details
+          image: registry.cn-shanghai.aliyuncs.com/cn-middleware-istio/springboot-bookinfo-details:3.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 7001
+              protocol: TCP
+            - containerPort: 9090
+              protocol: TCP
+          resources:
+            requests:
+              cpu: '1'
+              memory: 256Mi
+---
