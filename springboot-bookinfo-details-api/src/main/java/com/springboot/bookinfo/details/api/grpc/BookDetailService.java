@@ -29,8 +29,8 @@ public class BookDetailService extends BookDetailServiceGrpc.BookDetailServiceIm
         bookDetailBuilder.setType("paperback");
         bookDetailBuilder.setYear(1595);
         bookDetailBuilder.setPublisher("PublisherA");
-        bookDetailBuilder.setIsbn10("1234567890");
-        bookDetailBuilder.setIsbn13("123-1234567890");
+        bookDetailBuilder.setIsbn10("1234567891");
+        bookDetailBuilder.setIsbn13("123-1234567891");
 
         responseObserver.onNext(bookDetailBuilder.build());
         responseObserver.onCompleted();
